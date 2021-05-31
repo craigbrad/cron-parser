@@ -1,3 +1,9 @@
+require './lib/parsers/parsed_minutes'
+require './lib/parsers/parsed_hours'
+require './lib/parsers/parsed_days_of_month'
+require './lib/parsers/parsed_months'
+require './lib/parsers/parsed_days_of_week'
+
 class ParsedArguments
   attr_reader :arguments
   private :arguments
@@ -24,6 +30,10 @@ class ParsedArguments
 
   def days_of_week
     ParsedDaysOfWeek.new(split_arguments[4]).days
+  end
+
+  def command
+    split_arguments[5]
   end
 
   private

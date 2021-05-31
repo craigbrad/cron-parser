@@ -14,10 +14,6 @@ RSpec.describe Parser do
     )
   end
 
-  let(:printer) do
-    double(Printer, print: parsed_output)
-  end
-
   let(:parsed_output) do
     <<~TXT
       minute       0 15 30 45
@@ -27,12 +23,6 @@ RSpec.describe Parser do
       day of week  1 2 3 4 5
       command      /usr/bin/find
     TXT
-  end
-
-  before do
-    allow(ParsedArguments).to receive(:new).with(arguments).
-      and_return(parsed_arguments)
-    allow(Printer).to receive(:new).with(parsed_arguments).and_return(printer)
   end
 
   it "outputs when the cron job will run" do

@@ -1,3 +1,5 @@
+require './lib/parsers/parsed_argument'
+
 class ParsedMinutes
   attr_reader :minutes_argument
   private :minutes_argument

@@ -1,3 +1,5 @@
+require './lib/parsers/parsed_argument'
+
 class ParsedDaysOfMonth
   attr_reader :days_argument
   private :days_argument

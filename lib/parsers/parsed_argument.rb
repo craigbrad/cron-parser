@@ -11,7 +11,7 @@ class ParsedArgument
     if argument.include?('*/')
       increments
     elsif argument == '*'
-      valid_values
+      valid_values.to_a
     elsif argument.include?('-')
       range
     elsif argument.include?(',')

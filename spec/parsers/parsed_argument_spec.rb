@@ -13,7 +13,7 @@ RSpec.describe ParsedArgument do
     context 'when passing "*" wildcard' do
       let(:argument) { '*' }
       it 'should return all valid values' do
-        expect(parsed_argument.values).to eql(valid_values)
+        expect(parsed_argument.values).to eql(valid_values.to_a)
       end
     end
 

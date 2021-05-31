@@ -1,3 +1,5 @@
+require './lib/parsers/parsed_argument'
+
 class ParsedHours
   attr_reader :hours_argument
   private :hours_argument

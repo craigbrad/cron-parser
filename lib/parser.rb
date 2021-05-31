@@ -1,3 +1,6 @@
+require './lib/parsed_arguments'
+require './lib/formatter'
+
 class Parser
   attr_reader :arguments
   private :arguments
@@ -12,13 +15,6 @@ class Parser
 
   def parse
     parsed_arguments = ParsedArguments.new(arguments)
-    Printer.new(parsed_arguments).print
-  end
-end
-
-
-
-class Printer
-  def initialize(arguments)
+    Formatter.new(parsed_arguments).format
   end
 end
