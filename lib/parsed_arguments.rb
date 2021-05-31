@@ -15,6 +15,16 @@ class ParsedArguments
     end
   end
 
+  def hours
+    valid_values = 0..23
+    hour_argument = split_arguments[1]
+    if hour_argument.include?('*/')
+      step = hour_argument.split('*/').last.to_i
+      valid_values.step(step).to_a
+    end
+
+  end
+
   private
 
   def split_arguments
