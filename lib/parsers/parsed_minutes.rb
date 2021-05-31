@@ -7,10 +7,7 @@ class ParsedMinutes
   end
 
   def minutes
-    if minutes_argument.include?('*/')
-      step = minutes_argument.split('*/').last.to_i
-      valid_values.step(step).to_a
-    end
+    ParsedArgument.new(minutes_argument, valid_values).values
   end
 
   private
