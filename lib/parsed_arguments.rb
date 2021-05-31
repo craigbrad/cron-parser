@@ -7,22 +7,23 @@ class ParsedArguments
   end
 
   def minutes
-    valid_values = 0..59
-    minute_argument = split_arguments[0]
-    if minute_argument.include?('*/')
-      step = minute_argument.split('*/').last.to_i
-      valid_values.step(step).to_a
-    end
+    ParsedMinutes.new(split_arguments[0]).minutes
   end
 
   def hours
-    valid_values = 0..23
-    hour_argument = split_arguments[1]
-    if hour_argument.include?('*/')
-      step = hour_argument.split('*/').last.to_i
-      valid_values.step(step).to_a
-    end
+    ParsedHours.new(split_arguments[1]).hours
+  end
 
+  def days_of_month
+    ParsedDaysOfMonth.new(split_arguments[2]).days
+  end
+
+  def months
+    ParsedMonths.new(split_arguments[3]).months
+  end
+
+  def days_of_week
+    ParsedDaysOfWeek.new(split_arguments[4]).days
   end
 
   private
