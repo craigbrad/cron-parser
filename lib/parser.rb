@@ -16,10 +16,7 @@ class Parser
   end
 end
 
-class ParsedArguments
-  def initialize(arguments)
-  end
-end
+
 
 class Printer
   def initialize(arguments)
