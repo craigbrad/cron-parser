@@ -8,12 +8,12 @@ class Formatter
 
   def format
     <<~TXT
-      minute       #{ parsed_arguments.minutes.join(' ') }
-      hour         #{ parsed_arguments.hours.join(' ') }
-      day of month #{ parsed_arguments.days_of_month.join(' ') }
-      month        #{ parsed_arguments.months.join(' ') }
-      day of week  #{ parsed_arguments.days_of_week.join(' ') }
-      command      #{ parsed_arguments.command }
+      minute        #{ parsed_arguments.minutes.join(' ') }
+      hour          #{ parsed_arguments.hours.join(' ') }
+      day of month  #{ parsed_arguments.days_of_month.join(' ') }
+      month         #{ parsed_arguments.months.join(' ') }
+      day of week   #{ parsed_arguments.days_of_week.join(' ') }
+      command       #{ parsed_arguments.command }
     TXT
   end
 end

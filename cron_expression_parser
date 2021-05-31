@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 require './lib/parser'
 
-puts Parser.parse(ARGV.first)
+Parser.parse(ARGV.first)
