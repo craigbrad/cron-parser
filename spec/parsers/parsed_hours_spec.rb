@@ -1,4 +1,4 @@
-require '../lib/parsers/parsed_hours'
+require './lib/parsers/parsed_hours'
 
 RSpec.describe ParsedHours do
   subject(:parsed_hours) { ParsedHours.new(hours) }

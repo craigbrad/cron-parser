@@ -1,4 +1,4 @@
-require '../lib/parsers/parsed_argument'
+require './lib/parsers/parsed_argument'
 
 RSpec.describe ParsedArgument do
   subject(:parsed_argument) { ParsedArgument.new(argument, valid_values) }

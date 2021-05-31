@@ -1,4 +1,4 @@
-require '../lib/parsers/parsed_days_of_month'
+require './lib/parsers/parsed_days_of_month'
 
 RSpec.describe ParsedDaysOfMonth do
   subject(:parsed_days) { ParsedDaysOfMonth.new(days) }

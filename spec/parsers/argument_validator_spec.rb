@@ -1,4 +1,4 @@
-require '../lib/parsers/argument_validator'
+require './lib/parsers/argument_validator'
 
 describe ArgumentValidator do
   describe '.validate' do

@@ -1,4 +1,4 @@
-require '../lib/parsers/parsed_days_of_week'
+require './lib/parsers/parsed_days_of_week'
 
 RSpec.describe ParsedDaysOfWeek do
   subject(:parsed_days) { ParsedDaysOfWeek.new(days) }

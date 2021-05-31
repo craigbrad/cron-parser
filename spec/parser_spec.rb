@@ -1,4 +1,4 @@
-require "../lib/parser"
+require "./lib/parser"
 
 RSpec.describe Parser do
   subject(:output) { Parser.parse(arguments) }
