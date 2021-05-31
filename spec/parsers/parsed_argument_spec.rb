@@ -6,6 +6,11 @@ RSpec.describe ParsedArgument do
   let(:valid_values) { 0..59 }
 
   describe '#values' do
+    before do
+      allow(ArgumentValidator).to receive(:validate).with(argument).
+        and_return(true)
+    end
+
     it 'returns the list of valid times to run' do
       expect(parsed_argument.values).to eql([0, 15, 30, 45])
     end

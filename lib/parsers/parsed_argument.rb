@@ -1,3 +1,5 @@
+require './lib/parsers/argument_validator'
+
 class ParsedArgument
   attr_reader :argument, :valid_values
   private :argument, :valid_values
@@ -8,6 +10,8 @@ class ParsedArgument
   end
 
   def values
+    ArgumentValidator.validate(argument)
+
     if argument.include?('*/')
       increments
     elsif argument == '*'

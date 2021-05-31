@@ -39,6 +39,12 @@ class ParsedArguments
   private
 
   def split_arguments
-    @split_arguments ||= arguments.split(' ')
+    raise ArgumentError, "Please provide an argument" if arguments.nil?
+
+    @split_arguments ||= arguments.split(' ').tap do |args|
+      if args.count != 6
+        raise ArgumentError, "Invalid number of arguments"
+      end
+    end
   end
 end

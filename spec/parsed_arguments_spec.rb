@@ -73,4 +73,24 @@ RSpec.describe ParsedArguments do
       expect(parsed_arguments.days_of_week).to eql(days)
     end
   end
+
+  context "when invalid number of arguments" do
+    let(:arguments) { "*/15 */2 1,15 /usr/bin/find" }
+
+    it "raises a relevant error" do
+      expect { parsed_arguments.months }.to raise_error(
+        ArgumentError, "Invalid number of arguments"
+      )
+    end
+  end
+
+  context "when no arguments" do
+    let(:arguments) { }
+
+    it "raises a relevant error" do
+      expect { parsed_arguments.months }.to raise_error(
+        ArgumentError, "Please provide an argument"
+      )
+    end
+  end
 end

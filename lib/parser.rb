@@ -16,5 +16,7 @@ class Parser
   def parse
     parsed_arguments = ParsedArguments.new(arguments)
     Formatter.new(parsed_arguments).format
+  rescue ArgumentError => e
+    puts e
   end
 end
