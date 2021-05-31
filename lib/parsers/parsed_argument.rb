@@ -10,6 +10,14 @@ class ParsedArgument
   def values
     if argument.include?('*/')
       increments
+    elsif argument == '*'
+      valid_values
+    elsif argument.include?('-')
+      range
+    elsif argument.include?(',')
+      item_list
+    else
+      single_value
     end
   end
 
@@ -18,5 +26,21 @@ class ParsedArgument
   def increments
     step = argument.split('*/').last.to_i
     valid_values.step(step).to_a
+  end
+
+  def range
+    range = argument.split('-')
+    start = range.first.to_i
+    finish = range.last.to_i
+    (start..finish).to_a & valid_values.to_a
+  end
+
+  def item_list
+    items = argument.split(',').map(&:to_i)
+    items & valid_values.to_a
+  end
+
+  def single_value
+    Array(argument.to_i) & valid_values.to_a
   end
 end
